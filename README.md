@@ -16,9 +16,12 @@ Empaquetar microservicio (Jar file)
 
 > mvn package
 
+Ejecutar pruebas unitarias
+> mvn test
+
 Ejecutar microservicio en una terminal
 
-> mvn spring-boot-run
+> mvn spring-boot:run
 
 ## Operaciones disponibles
 
