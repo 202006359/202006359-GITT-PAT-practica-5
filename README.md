@@ -60,7 +60,7 @@ Ver estado del servicio
 - **BBDD Schema**
 <img width="645" alt="image" src="https://user-images.githubusercontent.com/113789409/235310286-213208b3-48fe-4a7d-ba43-5684addaea6a.png">
 
-## Ejemplo visual 
+## Ejemplo visual de CreateQR.html
 <img width="645" alt="image" src="https://user-images.githubusercontent.com/113789409/229900083-7c4b519f-a4bb-42f5-aac1-3f5b04f42168.png">
  
 
