@@ -47,7 +47,7 @@ Ver estado del servicio
 
 - **¡¡Guardado de imagen en BBDD!!** En esta pratica se ha implementado el microservecio de guardarQR, donde se almacena un ID, el url de la web solicitada, el tamaño del QR y la imagen en la base de datos QR_INFO.
 
-- **Anotacion Transactional** El servicio superior, ejecutarOperacion, está implemetando con lógica transacional desde que llamas a la API hasta que acabas de guardar la información en la BBDD, para poder deshacer los cambios en caso de error.
+- **Anotacion @Transactional** El servicio superior, ejecutarOperacion, está implemetando con lógica transacional desde que llamas a la API hasta que acabas de guardar la información en la BBDD, para poder deshacer los cambios en caso de error.
 <img width="645" alt="image" src="https://user-images.githubusercontent.com/113789409/235310071-67bb9e42-669a-46a1-a02e-b45ed29b54d0.png">
 
 - **Repositorio con @Query** El CrudRepository está implementado mediante una sentencia SQL de insert y select personalizada
