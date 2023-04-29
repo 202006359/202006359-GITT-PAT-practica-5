@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="style_common.css">
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>QR Page</title>
+  </head>
+  <body>
+    <div class="topnav">
+      <a href="contact.html">Contact</a>
+      <a href="projects.html">Projects</a> <!-- href = link o href = nombre de la div-->
+      <a href="index.html#about">About</a>
+      <a href="createQR.html">Create QR</a>
+      <a id="home" href="index.html">IVAN SANCHEZ</a>
+    </div>
+
+
+    <div class="container-fluid">
+      <div class = "first-text">
+        <h1 class="text-center">Create QR</h1>
+        <p class="text-center">You can use this page to create a QR code for your website</p><br>
+      </div>
+      <div class="text-center">
+   
+        <!-- Get a Placeholder image initially,
+         this will change according to the
+         data entered later -->
+        <img src="http://api.qrserver.com/v1/create-qr-code/?data=https://github.com/202006359&size=160x160" id = "qr-code" class="qr-code img-thumbnail img-responsive" />
+      </div>
+   
+      <div class="form-horizontal col-sm-8 offset-sm-2">
+        <div class="form-group">
+          <label class="control-label" for="content">Content:</label>
+          <!-- Input box to enter the
+              required data -->
+          <input type="url" maxlength="80" class="form-control" id="content" placeholder="Enter content (i.e: https://github.com)" />
+        </div>
+        <div class="form-group">
+          <!-- Button to generate QR Code for
+            the entered data -->
+          <button type="button" class= "btn btn-primary" id="generate">Generate</button>
+        </div>
+      </div>
+    </div>
+    
+
+  </body>
+  <script> 
+    const generateButton = document.getElementById('generate');
+    
+    generateButton.addEventListener('click', async (e) => {
+      e.preventDefault();
+      const paginaweb = document.getElementById('content').value;
+      await createQR(paginaweb);
+      return false;
+    });
+    
+    async function createQR(paginaweb){
+      const img = document.getElementById('qr-code');
+      const apiUrl = 'http://localhost:8888/icai/CreateQR'; //'https://api.qrserver.com/v1/create-qr-code/';
+      const size = '160x160'
+      const queryParams = '?size=' + size + '&data=' + paginaweb;
+      const requestUrl = apiUrl + queryParams;
+
+      //prueba = 'http://localhost:8888/icai/CreateQR?size=160x160&data=https://github.com';
+          
+      await fetch(requestUrl, {
+        method: 'GET'
+      })
+      .then(response => {
+        if (response.ok) {
+          return response.blob();
+        } else {
+          throw new Error('Failed to generate QR code');
+        }
+      })
+      .then(blob => {
+        img.src = URL.createObjectURL(blob);
+      })
+      .catch(error => {
+        console.error(error);
+        alert(error.message);
+      });
+    }
+    
+    
+  </script>
+</html>

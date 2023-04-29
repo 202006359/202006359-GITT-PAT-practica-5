@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="style_common.css">
+
+    <title>Contact Page</title>
+  </head>
+  <body style="background-color: #d1cfc9;">
+    <div class="topnav">
+      <a href="contact.html">Contact</a>
+      <a href="projects.html">Projects</a> <!-- href = link o href = nombre de la div-->
+      <a href="index.html#about">About</a>
+      <a href="createQR.html">Create QR</a>
+      <a id="home" href="index.html">IVAN SANCHEZ</a>
+    </div>
+    <div class="container">
+      <div class = "first-text">
+        <h1 class="text-center"><br> Contact Me</h1>
+        <p class="text-center">Feel free to reach out to me with any questions or concerns</p>
+      </div>
+      <div class="row">
+        <div class="col-sm-8 offset-sm-2">
+          <form>
+            <div class="form-group">
+              <label for="name">Name</label>
+              <input type="text" class="form-control" id="name" placeholder="Enter your name">
+            </div>
+            <div class="form-group">
+              <label for="email">Email address</label>
+              <input type="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="Enter your email"> <!--aria-describedby es para dar info extra--> 
+              <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+            </div>
+            <div class="form-group">
+              <label for="message">Message</label>
+              <textarea class="form-control" id="message" rows="3"></textarea>
+            </div>
+            
+            <button type="submit" class="btn btn-primary btn-lg btn-block">Submit</button>
+
+            <!-- Boton con JavaScript-->
+            <button style="margin-bottom: 1em; margin-top: 1em;" type="button" class="btn btn-outline-dark" onclick="location.href='index.html'">Go Home</button>
+            
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

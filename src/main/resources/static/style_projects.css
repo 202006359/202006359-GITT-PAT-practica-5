@@ -1,0 +1,46 @@
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    border: 1px solid #6b6659;
+    padding: 1%;
+    text-align: left;
+    text-align: justify;
+    font-family:'Times New Roman', 'Times Light', light;
+}
+
+th {
+    background-color: #696760;
+    font-size: 18px;
+    font-weight: 400;
+    border: 1px solid #696760;
+}
+
+
+
+.name-table-columns{
+    color: white;
+    font-family: 'Times New Roman', 'Times Light', light;
+    height: 50px;
+}
+
+.even-row{
+    background-color: #b9b7b1;
+    color: white;
+    border: black;
+}
+
+#name-project{
+    width: 30%;
+}
+#description-project{
+    width: 50%;
+}
+#duration-project{
+    width: 20%;
+}
+
+
+
