@@ -48,15 +48,17 @@ Ver estado del servicio
 > http://localhost:8888/icai/CreateQR/health
 <img width="645" alt="image" src="https://user-images.githubusercontent.com/113789409/229899930-fd4d29b5-8e22-46a2-adaf-be429ccdb4a8.png">
 
-- **¡¡Guardado de imagen en BBDD!!** En esta pratica se ha implementado el microservecio de guardarQR, donde se almacena un ID, el url de la web solicitada, el tamaño del QR y la imagen en la base de datos QR_INFO.
+- **¡¡Guardado de imagen en BBDD!!** En esta pratica se ha implementado el microservecio de guardarQR, donde se almacena un ID, el url de la web solicitada, el tamaño del QR y la imagen en la base de datos QR_INFO.Las dos primeras filas son las de inicialización.
+<img width="645" alt="image" src="https://user-images.githubusercontent.com/113789409/235320205-9a720fa5-ea05-49cf-bf5c-0702e7a182c9.png">
 
-- **Anotacion @Transactional** El servicio superior, ejecutarOperacion, está implemetando con lógica transacional desde que llamas a la API hasta que acabas de guardar la información en la BBDD, para poder deshacer los cambios en caso de error.
+
+- **Anotacion @Transactional** El servicio superior, ejecutarOperacion, está implemetando con lógica transacional desde que llamas a la API hasta que acabas de guardar la información en la BBDD, para poder deshacer los cambios en caso de error. 
 <img width="645" alt="image" src="https://user-images.githubusercontent.com/113789409/235310071-67bb9e42-669a-46a1-a02e-b45ed29b54d0.png">
 
 - **Repositorio con @Query** El CrudRepository está implementado mediante una sentencia SQL de insert y select personalizada
 <img width="645" alt="image" src="https://user-images.githubusercontent.com/113789409/235310087-fdb9a5e1-6580-4db2-8140-472a6190fa1c.png">
 
-- **Test** Se han añadido dos clases de tipo Test, que implementan lógica de SpringBootTest y JUnit para verificar el correcto funcionamiento del controlador y los microservicios asociados a la llamada de la API y la persistencia en BBDD.
+- **Test** Se han añadido dos clases de tipo Test, que implementan lógica de SpringBootTest y JUnit para verificar el correcto funcionamiento del controlador y los microservicios asociados a la llamada de la API y la persistencia en BBDD. 
 
 - **Test HTTP** Se verifica el correcto funcionamiento de la aplicación bajo distintos posibles escenarios: 200, 400, 404 y 500. Se hace uso de la librería Mockito.
 
