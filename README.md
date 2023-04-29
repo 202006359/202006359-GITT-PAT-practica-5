@@ -1,5 +1,5 @@
-# 202006359-GITT-PAT-practica-5
 
+# 202006359-GITT-PAT-practica-5
 
 La estructura del proyecto es:
 
@@ -47,6 +47,7 @@ Ver estado del servicio
 - **Repositorio con @Query** El CrudRepository está implementado mediante una sentencia SQL de insert y select personalizada
 <img width="645" alt="image" src="https://user-images.githubusercontent.com/113789409/235310087-fdb9a5e1-6580-4db2-8140-472a6190fa1c.png">
 - **Test** Se han añadido dos clases de tipo Test, que implementan lógica de SpringBootTest y JUnit para verificar el correcto funcionamiento del controlador y los microservicios asociados a la llamada de la API y la persistencia en BBDD.
+- **Test HTTP** Se verifica el correcto funcionamiento bajo distintos escenarios: 200, 400, 404 y 500.
 - **BBDD Schema**
 <img width="645" alt="image" src="https://user-images.githubusercontent.com/113789409/235310286-213208b3-48fe-4a7d-ba43-5684addaea6a.png">
 
