@@ -52,5 +52,5 @@ Ver estado del servicio
 
 ## Ejemplo visual 
 <img width="645" alt="image" src="https://user-images.githubusercontent.com/113789409/229900083-7c4b519f-a4bb-42f5-aac1-3f5b04f42168.png">
-
+ 
 
