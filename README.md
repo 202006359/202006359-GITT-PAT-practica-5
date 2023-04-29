@@ -22,7 +22,7 @@ Ejecutar microservicio en una terminal
 
 ## Operaciones disponibles
 
-El servicio actualmente implementa un servicio de llamada a una API, esta API lo que hace es devolver una imagen con el QR solicitado. Admite como parámetro en la URL (Query-param) el size *"160x160"* y el data *"https://github.com"*. Ambos campos son obligatorios, aunque el de size no lo puede tocar el usuario. Adicionalmente, tanto los parametros de entrada descritos anteriormente como la imagen recibida por la API, es guardada en una BBDD. Se recomienda seguir leyendo para más informacíon.
+El servicio actualmente implementa un servicio de llamada a una API, esta API lo que hace es devolver una imagen con el QR solicitado. Admite como parámetro en la URL (Query-param) el size *"160x160"* y el data *"https://github.com"*. Ambos campos son obligatorios, aunque el de size no lo puede tocar el usuario. Adicionalmente, tanto los parametros de entrada descritos anteriormente como ***"la imagen recibida por la API, es guardada en una BBDD H2"***. Se recomienda seguir leyendo para más información.
 
 CrearQR *"CreateQR.html"*
 
@@ -45,7 +45,7 @@ Ver estado del servicio
 > http://localhost:8888/icai/CreateQR/health
 <img width="645" alt="image" src="https://user-images.githubusercontent.com/113789409/229899930-fd4d29b5-8e22-46a2-adaf-be429ccdb4a8.png">
 
-- **¡¡Guardado de imagen en BBDD!!** En esta pratica se ha implementado el microservecio de guardarQR, donde se almacena un ID, el url de la web solicitada, el tamaño del QR y la imagen; almacenada como un byte [ ].
+- **¡¡Guardado de imagen en BBDD!!** En esta pratica se ha implementado el microservecio de guardarQR, donde se almacena un ID, el url de la web solicitada, el tamaño del QR y la imagen en la base de datos QR_INFO; la imagen se almacenada como un byte [ ].
 
 - **Anotacion Transactional** El servicio superior, ejecutarOperacion, está implemetando con lógica transacional desde que llamas a la API hasta que acabas de guardar la información en la BBDD, para poder deshacer los cambios en caso de error.
 <img width="645" alt="image" src="https://user-images.githubusercontent.com/113789409/235310071-67bb9e42-669a-46a1-a02e-b45ed29b54d0.png">
@@ -54,8 +54,8 @@ Ver estado del servicio
 <img width="645" alt="image" src="https://user-images.githubusercontent.com/113789409/235310087-fdb9a5e1-6580-4db2-8140-472a6190fa1c.png">
 
 - **Test** Se han añadido dos clases de tipo Test, que implementan lógica de SpringBootTest y JUnit para verificar el correcto funcionamiento del controlador y los microservicios asociados a la llamada de la API y la persistencia en BBDD.
-- 
-- **Test HTTP** Se verifica el correcto funcionamiento bajo distintos escenarios: 200, 400, 404 y 500.
+
+- **Test HTTP** Se verifica el correcto funcionamiento de la aplicación bajo distintos posibles escenarios: 200, 400, 404 y 500.
 
 - **BBDD Schema**
 <img width="645" alt="image" src="https://user-images.githubusercontent.com/113789409/235310286-213208b3-48fe-4a7d-ba43-5684addaea6a.png">
